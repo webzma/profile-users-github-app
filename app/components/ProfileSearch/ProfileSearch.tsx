@@ -3,7 +3,11 @@ import { getUserProfile } from "@/app/services/getUserProfile";
 import Image from "next/image";
 import { UserFinded } from "@/types/UserFinded.type";
 
-export function ProfileSearch({ setUsername }: { setUsername: any }) {
+export function ProfileSearch({
+  setUsername,
+}: {
+  setUsername: (username: string) => void;
+}) {
   const [searchValue, setSearchValue] = useState("");
   const [userFinded, setUserFinded] = useState<UserFinded | null>(null);
 
@@ -17,7 +21,9 @@ export function ProfileSearch({ setUsername }: { setUsername: any }) {
   };
 
   const handleClick = () => {
-    setUsername(userFinded?.login);
+    if (userFinded?.login) {
+      setUsername(userFinded.login);
+    }
     setSearchValue("");
   };
 
