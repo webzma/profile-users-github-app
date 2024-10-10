@@ -13,11 +13,11 @@ interface User {
 export function MainUserInfo({ user }: { user: User }) {
   return (
     <div className="w-3/4 m-auto">
-      <div className="flex w-full">
+      <div className="flex flex-col lg:flex-row first-letter: w-full">
         <div>
           <AvatarUserProfile userAvatar={user.avatar_url} />
         </div>
-        <div className="flex items-center gap-x-4 w-full ml-10">
+        <div className="flex flex-col gap-4 w-full mb-8 lg:mb-0 lg:ml-10 lg:flex-row lg:items-center max-w-[400px] lg:max-w-0">
           <InfoUserBadge label="Followers" value={user.followers} />
           <InfoUserBadge label="Following" value={user.following} />
           <InfoUserBadge label="Location" value={user.location} />

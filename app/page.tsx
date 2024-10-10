@@ -53,6 +53,7 @@ export default function Home() {
               id={repo.id}
               key={repo.id}
               name={repo.name}
+              html_url={repo.html_url}
               description={repo.description}
               license={repo.license}
               forks_count={repo.forks_count}

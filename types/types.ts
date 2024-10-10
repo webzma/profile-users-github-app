@@ -24,4 +24,5 @@ export interface UserRepo {
   };
   forks_count: number;
   stargazers_count: number;
+  html_url: string;
 }

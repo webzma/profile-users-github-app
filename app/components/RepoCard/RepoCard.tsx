@@ -1,4 +1,5 @@
 import { UserRepo } from "@/types/types";
+import Link from "next/link";
 
 export function RepoCard({
   name,
@@ -6,10 +7,17 @@ export function RepoCard({
   license,
   forks_count,
   stargazers_count,
+  html_url,
 }: UserRepo) {
   return (
     <div className="flex flex-col gap-y-4 h-auto rounded-lg bg-[linear-gradient(90deg,_rgba(17,23,41,1)_0%,_rgba(17,23,41,1)_45%,_rgba(29,27,72,1)_88%)] p-6">
-      <h2 className="text-paleGray font-semibold text-xl">{name}</h2>
+      <Link
+        href={html_url}
+        target="_blank"
+        className="text-paleGray font-semibold text-xl"
+      >
+        {name}
+      </Link>
       <p className="text-md text-paleGray/80 text-pretty">{description}</p>
 
       <div className="flex items-center gap-x-5">

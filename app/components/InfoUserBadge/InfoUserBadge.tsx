@@ -9,7 +9,7 @@ export function InfoUserBadge({ label, value }: InfoUserBadgeProps) {
       <span className="border-mediumGray border-r h-[40px] flex items-center justify-center px-6 text-lightGray font-semibold">
         {label}
       </span>
-      <span className="h-[40px] flex items-center justify-center px-6 text-white font-semibold">
+      <span className="h-[40px] flex items-center justify-end px-6 text-white font-semibold w-full">
         {value}
       </span>
     </article>

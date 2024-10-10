@@ -69,7 +69,7 @@ export function ProfileSearch({
           }}
           type="text"
           placeholder="webzma..."
-          className="text-paleGray text-md font-medium bg-darkGray h-14 w-[500px] border-none focus-visible:border-none focus:outline-none"
+          className="text-paleGray text-md font-medium bg-darkGray h-14 w-full w-[230px] rounded-md lg:w-[500px] border-none focus-visible:border-none focus:outline-none"
           onChange={(e) => handleSearch(e)}
         />
       </div>
@@ -89,7 +89,7 @@ export function ProfileSearch({
                   className="rounded-xl"
                 />
               </div>
-              <div className="flex flex-col text-left ">
+              <div className="flex flex-col text-left">
                 <p className="font-semibold text-lg text-paleGray">
                   {userFinded?.name}
                 </p>
