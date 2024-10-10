@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getUserProfile } from "@/app/services/getUserProfile";
 import Image from "next/image";
-import { UserFinded } from "@/types/UserFinded.type";
+import { UserFinded } from "@/types/types";
 
 export function ProfileSearch({
   setUsername,

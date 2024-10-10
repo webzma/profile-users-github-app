@@ -1,4 +1,4 @@
-import { UserRepo } from "@/types/UserRepo";
+import { UserRepo } from "@/types/types";
 
 export function RepoCard({
   name,

@@ -7,10 +7,10 @@ import { getUserProfile } from "./services/getUserProfile";
 import { UserRepositoriesWrapper } from "./components/UserRepositoriesWrapper";
 import { getReposUserProfile } from "./services/getReposUserProfile";
 import { RepoCard } from "./components/RepoCard";
-import { User } from "../types/User";
+import { User } from "../types/types";
 
 import { useEffect, useState } from "react";
-import { UserRepo } from "@/types/UserRepo";
+import { UserRepo } from "@/types/types";
 
 export default function Home() {
   const [user, setUser] = useState<User>();
@@ -18,17 +18,17 @@ export default function Home() {
   const [username, setUsername] = useState("webzma");
   const [reposLimit, setReposLimit] = useState(true);
 
-  async function getData(username: string) {
-    const userProfile = await getUserProfile(username);
-    const userRepos = await getReposUserProfile(username);
-
-    if (userProfile !== user) {
-      setUser(userProfile);
-      setUserRepositories(userRepos);
-    }
-  }
-
   useEffect(() => {
+    async function getData(username: string) {
+      const userProfile = await getUserProfile(username);
+      const userRepos = await getReposUserProfile(username);
+
+      if (userProfile !== user) {
+        setUser(userProfile);
+        setUserRepositories(userRepos);
+      }
+    }
+
     getData(username);
   }, [username]);
 
